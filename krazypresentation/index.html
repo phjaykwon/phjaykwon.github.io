@@ -12,7 +12,7 @@
 
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
 
-    <link href="css/impress-demo.css" rel="stylesheet" />
+    <link href="css/krazy.css" rel="stylesheet" />
     
     <link rel="shortcut icon" href="favicon.png" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -106,7 +106,6 @@
             <div style="width:35%;border:solid black;height:30%;border-radius: 5px;background-color: #33CCCC;float:left;"></div>
             <div style="width:50%;border:solid black;height:30%;border-radius: 5px;background-color: #FFFF00;float:left;"></div>
             <div style="width:46.5%;border:solid black;height:30%;border-radius: 5px;background-color: #00CC99;float:left;"></div>
-
         </div>
         <br>
         <br>
@@ -139,7 +138,7 @@
 
     <div id="me" class="step slide" data-x="1000" data-y="-1500">
         <q style="color: inherit;">Who am <strong>I</strong>?</q>
-        <q style="color:inherit;">- a UC Berkeley student <br>- computer science major<br>- incoming senior</q>
+        <q style="color:inherit;">I am a UC Berkeley student studying computer science. I love to solve problems with new technologies.</q>
     </div>
 
     <!--
@@ -154,7 +153,7 @@
     -->
     <div id="title" class="step" data-x="0" data-y="0" data-scale="4">
         <span class="try">Summer Intern Project: </span>
-        <h1>krazydash<sup></sup></h1>
+        <h1 style="color:darkslategrey;">krazydash<sup></sup></h1>
     </div>
 
     <!--
@@ -165,14 +164,16 @@
         element should be rotated by 90 degrees clockwise.
         
     -->
-    <div id="krazydash" class="step" data-x="850" data-y="3000" data-rotate="90" data-scale="5">
-        <q>Why krazydash?</q><br><br>
-        <p>krazyglue team had a <strong>problem</strong> of not being able to visualize and analyze data related to the product and development in one place.</p>
+    <div id="krazydash" class="step" data-x="200" data-y="3500" data-rotate="90" data-scale="5">
+        <q>Why need krazydash?</q><br><br>
+        <p style="font-size:.7em;">krazyglue team had a <strong>problem</strong> of not being able to visualize most of the app logistics neither quickly nor efficiently.</p>
+        <img src="images/krazy-pipeline.png" style="width:110%;">
+
     </div>
 
-    <div id="solution" class="step" data-x="4000" data-y="6000"  data-scale="5">
+    <div id="solution" class="step" data-x="4000" data-y="5500"  data-scale="5">
         <q>Proposed solution?</q><br><br>
-        <p>Create a web application to aggregate important monitoring data on one page so the <b>krazyglue</b> team is aware of the <b>status</b> of the app & <b>pipeline</b> with a simple glance.
+        <p style="font-size:.7em;">Create a dashboard to <b>streamline</b> our awareness of the krazyglue app.<br><br><b>Aggregate</b> important monitoring data on one page.
         </p>
     </div>
 
@@ -197,7 +198,7 @@
     <div id="tiny" class="step" data-x="2825" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1">
         <p>How does <b>Atlasboard</b> work?</p>
         <br>
-        <p style="font-size:.9em;">job scheduling & widget rendering [diagram here] </p>
+        <img src="images/krazydash-architecture.png" style="width: 180%;margin-left: -80px;">
     </div>
 
     <!--
@@ -222,20 +223,41 @@
     -->
 
     <div id="imagination" class="step" data-x="6700" data-y="-300" data-scale="6">
-        <p>supported features include: </p>
-        <p style="font-size:.7em;">Github open pull requests, <b class="imagination">Graphite</b>, Splunk, Pagerduty Activity, <b class="imagination">CI Pipeline</b>, and Telegram</p>
+        <q style="font-size:1.2em;">General Features include...</q><br>
     </div>
+
+    <div id="github" class="step" data-x="7700" data-y="-4000" data-rotate="0" data-scale="4">
+        <p>Github Open Pull Requests</p>
+    </div>
+    <div id="jenkins" class="step" data-x="7700" data-y="-3500" data-rotate="0" data-scale="4">
+        <p>Continuous Integration Pipeline</p>
+    </div>
+    <div id="splunk" class="step" data-x="7700" data-y="-3000" data-rotate="0" data-scale="4">
+        <p>Graphite/Splunk</p>
+    </div>
+    <div id="pagerduty" class="step" data-x="7700" data-y="-2500" data-rotate="0" data-scale="4">
+        <p>Pagerduty</p>
+    </div>
+    <div id="telegram" class="step" data-x="7700" data-y="-2000" data-rotate="0" data-scale="4">
+        <p>Telegram</p>
+    </div>
+
 
     <div id="cpuload" class="step" data-x="9000" data-y="2500" data-rotate="20" data-scale="4">
         <p>A feature: Graphite</p>
-        <p style="font-size:.7em;">combine data [] Issue: there are many aspects of <b>krazyglue</b> that are being monitored (i.e. CPU load, server requests). To make sense of this data, krazyglue has been using a slow, client-side app.</p><br>
-
-        <p style="font-size:.7em;">Solution: krazydash uses a <b>cache</b> to store aggregated data for our live boxes. This is done purely on the <b>server-side</b>, not client-side.</p>
+        <p style="font-size:.5em;">We use Graphite to track our live boxes' CPU load, server requests, and other information after the app has been deployed.<br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/graphite-catalina.png" style="margin: auto;">
+            <br>
+        <p style="font-size:.7em;">krazydash efficiently uses a <b>cache</b> to store aggregated data for our live boxes. It also provides the flexibility to combine graphs for a more holistic view.</p>
     </div>
-    <div id="cipipeline" class="step" data-x="8000" data-y="5200" data-rotate="-20" data-scale="4">
+    <div id="cipipeline" class="step" data-x="8500" data-y="6200" data-rotate="-20" data-scale="4">
         <p>A feature: CI Pipeline</p>
-        <p style="font-size:.7em;">Issue: it is difficult to monitor all Jenkins jobs running in the two environments:<br> ewe.builds & ewe.deploy</p>
+        <p style="font-size:.5em;">Issue: it is difficult to monitor all Jenkins jobs running in the <span style="color:red">two</span> environments: ewe.builds & ewe.deploy</p>
+
+        <img src="images/ci.png" style="float:right;">
         <br>
+        <br>
+
         <p style="font-size:.7em;">Solution: krazydash tracks the status of all the builds and displays them on the same page.</p>
     </div>
     <!-- <div id="ing" class="step" data-x="8400" data-y="6800" data-rotate="-40" data-scale="4">
@@ -252,27 +274,16 @@
     </div>
 
     <div id="krazyglueAspects" class="step slide" data-x="4000" data-y="-1500">
-        <br>
-        <br>
-        <p>Honest: <b>admitting fault quickly</b></p>
-        <br>
-        <p>Supportive</p>
-        <br>
-        <p>Creative: <b>venturing new technologies</b></p>
-        <br>
-        <p>Hardworking</p>
-        <br>
-        <p>Diverse: <b>not concentrating skills in one area</b></p>
-        <br>
-        <p>Respectful</p>
-         my experience ->
-         repo ->
+        something
     </div>
 
     <div id="questions" class="step slide" data-x="5000" data-y="-1500">
         <br>
         <br>
-        <q>Any Questions?</q>
+        <p style="font-size:.9em; text-align: center;"> Running on <br><span style="color:steelblue;font-size:1.4em;">krazydash-web.us-west-1.prod.expedia.com</span></p><br>
+        <p style="font-size:.9em;text-align: center;"> Github: <span style="color:forestgreen;">ewegithub.sb.karmalab.net/EWE/krazydash-web </span></p>
+<br><br>
+        <p style="text-align: center;font-size:1.2em;">Any Questions?</p>
     </div>
 
 
