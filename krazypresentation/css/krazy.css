@@ -180,6 +180,24 @@ a:focus {
     line-height: 1.5;
 }
 
+.step-more {
+    position: relative;
+    width: 900px;
+    padding: 40px;
+    margin: 20px auto;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    -ms-box-sizing:     border-box;
+    -o-box-sizing:      border-box;
+    box-sizing:         border-box;
+
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 48px;
+    line-height: 1.5;
+}
+
+
 /*
     ... and we enhance the styles for impress.js.
 
@@ -187,7 +205,18 @@ a:focus {
 */
 .impress-enabled .step {
     margin: 0;
-    opacity: 0.3;
+    opacity: 0.2;
+
+    -webkit-transition: opacity 1s;
+    -moz-transition:    opacity 1s;
+    -ms-transition:     opacity 1s;
+    -o-transition:      opacity 1s;
+    transition:         opacity 1s;
+}
+
+.impress-enabled .step-more {
+    margin: 0;
+    opacity: 0.8;
 
     -webkit-transition: opacity 1s;
     -moz-transition:    opacity 1s;
@@ -197,6 +226,10 @@ a:focus {
 }
 
 .impress-enabled .step.active { opacity: 1 }
+
+.impress-enabled .step-more.active {
+    opacity: 1
+}
 
 /*
     These 'slide' step styles were heavily inspired by HTML5 Slides:
